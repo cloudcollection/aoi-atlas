@@ -37,7 +37,7 @@ async def lifespan(app):
         browser.quit()
 
 
-app = FastAPI(title="AOI 多地图采集", version="2.1.1", lifespan=lifespan)
+app = FastAPI(title="AOI 多地图采集", version="2.1.2", lifespan=lifespan)
 app.mount("/shared", StaticFiles(directory=BASE / "aoiCollectorJs"), name="shared")
 
 
@@ -132,7 +132,7 @@ async def remove(record_id: str):
 async def status():
     return {
         "ok": True,
-        "version": "2.1.1",
+        "version": "2.1.2",
         "browser_alive": browser.alive if browser else False,
         "migration": await asyncio.to_thread(storage.migration_status),
     }

@@ -4,13 +4,20 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>AOI · 地图区域工作台</title>
+    <link rel="icon" type="image/svg+xml" href="images/aoi-logo.svg" />
     <link rel="stylesheet" href="vendor/leaflet/leaflet.css" />
     <link rel="stylesheet" href="manager.css" />
   </head>
   <body>
     <header>
       <div class="brand">
-        <span class="mark">a</span>
+        <img
+          class="mark"
+          src="images/aoi-logo.svg"
+          alt="AOI"
+          width="44"
+          height="44"
+        />
         <div>
           <b>AOI<span> / 地图区域工作台</span></b
           ><small>收集边界，保留每一份来源。</small>
@@ -33,19 +40,37 @@
       </section>
       <section class="providers" aria-label="地图来源">
         <article class="provider gaode">
-          <span class="provider-icon">高</span>
+          <img
+            class="provider-icon"
+            src="images/gaode.ico"
+            alt=""
+            width="32"
+            height="32"
+          />
           <div><b>高德地图</b><small>搜索并点击建筑或园区</small></div>
           <span class="tag">支持 AOI</span
           ><button data-provider="gaode">打开地图 ↗</button>
         </article>
         <article class="provider baidu">
-          <span class="provider-icon">百</span>
+          <img
+            class="provider-icon"
+            src="images/baidu.ico"
+            alt=""
+            width="32"
+            height="32"
+          />
           <div><b>百度地图</b><small>保留边界精确性标记</small></div>
           <span class="tag blue">支持 AOI</span
           ><button data-provider="baidu">打开地图 ↗</button>
         </article>
         <article class="provider tencent">
-          <span class="provider-icon">腾</span>
+          <img
+            class="provider-icon"
+            src="images/tencent.ico"
+            alt=""
+            width="32"
+            height="32"
+          />
           <div><b>腾讯地图</b><small>搜索与独立详情页地点采集</small></div>
           <span class="tag amber">实验支持</span
           ><button data-provider="tencent">打开地图 ↗</button>
@@ -115,7 +140,7 @@
         </div>
       </section>
       <footer>
-        <span>AOI COLLECTOR · 2.1</span
+        <span>AOI COLLECTOR · 2.1.2</span
         ><span>源坐标与质量标记随记录保留 · 无边界时不生成替代面</span>
       </footer>
     </main>

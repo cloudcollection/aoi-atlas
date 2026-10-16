@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "AOI 多地图采集",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "minimum_chrome_version": "111",
   "description": "高德、百度来源边界采集；腾讯实验地点记录。保留来源与精确性标记，本地保存和导出。",
   "permissions": ["downloads"],
@@ -14,6 +14,17 @@
     "https://map.qq.com/*"
   ],
   "background": { "service_worker": "background.js" },
+  "web_accessible_resources": [
+    {
+      "resources": ["images/aoi-logo.svg"],
+      "matches": [
+        "https://*.gaode.com/*",
+        "https://*.amap.com/*",
+        "https://map.baidu.com/*",
+        "https://map.qq.com/*"
+      ]
+    }
+  ],
   "content_scripts": [
     {
       "matches": [

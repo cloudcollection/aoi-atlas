@@ -1,4 +1,5 @@
 import os
+import base64
 import json
 import urllib.request
 from urllib.parse import urlparse
@@ -107,7 +108,14 @@ class BrowserController:
     def bundle(self):
         import json
 
-        config = "window.__AOI_WEB_CONFIG=" + json.dumps({"mode": "web"}) + ";\n"
+        logo = base64.b64encode(
+            (BASE / "aoiCollectorJs/images/aoi-logo.svg").read_bytes()
+        ).decode("ascii")
+        config = (
+            "window.__AOI_WEB_CONFIG="
+            + json.dumps({"mode": "web", "logo": "data:image/svg+xml;base64," + logo})
+            + ";\n"
+        )
         return config + "\n".join(
             (BASE / "aoiCollectorJs" / p).read_text(encoding="utf-8-sig")
             for p in ("core.js", "hook.js", "panel.js")

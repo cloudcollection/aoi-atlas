@@ -37,4 +37,12 @@
 - `images/tencent-experimental.png`：深圳人才公园真实腾讯搜索与扩展保存。
 - `images/extension-workbench.png`：上述真实记录的扩展工作台，坐标网格模式。
 - `images/web-workbench.png`：真实记录的 Web 预览、导出入口及来源提示。
-- `images/baidu-web-collection.png`：广州图书馆真实 Web 浮窗保存。
+- `images/baidu-web-collection.png`：v2.1.1 广州图书馆 Web 浮窗保存记录。
+
+## v2.1.2 界面验收
+
+- 扩展管理页、弹窗、地图采集浮窗和 Web 采用暖白底、陶土色及系统衬线字体；中文标题在本次 Windows / Edge 环境实际使用 Noto Serif SC，英文使用 Georgia，各平台按系统字体回退。
+- AOI 使用图片 Logo，并同步扩展图标；三个地图入口使用各自官网提供的图标。
+- 广州图书馆在百度正常搜索、详情、12 点来源边界保存通过；深圳人才公园在腾讯独立详情页地点保存通过，仍仅保存 Point。
+- 扩展和 Web 图片全部加载成功，窄屏无横向溢出，GeoJSON 和 Web SHP 实际下载通过。README 中四张演示图片已重新截取。
+- 12 项 Node、9 项 Python 回归通过。

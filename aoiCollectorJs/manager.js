@@ -145,9 +145,9 @@ function draw() {
     try {
       const l = L.geoJSON(C.feature(r), {
         style: {
-          color: r.id === selected ? "#137a69" : "#588f9a",
+          color: r.id === selected ? "#a65339" : "#8e8370",
           weight: r.id === selected ? 3 : 1.5,
-          fillColor: r.id === selected ? "#28a487" : "#82aea9",
+          fillColor: r.id === selected ? "#c8805d" : "#b5aa95",
           fillOpacity: r.id === selected ? 0.24 : 0.1
         },
         pointToLayer: (_, p) =>

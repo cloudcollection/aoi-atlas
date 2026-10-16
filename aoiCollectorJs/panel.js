@@ -14,7 +14,29 @@
   host.id = "aoi-collector-panel";
   host.style.cssText = "position:fixed;right:22px;top:90px;z-index:2147483647;";
   const shadow = host.attachShadow({ mode: "open" });
-  shadow.innerHTML = `<style>:host{all:initial;font-family:system-ui,"Microsoft YaHei",sans-serif;color:#142d35}*{box-sizing:border-box}.panel{width:320px;background:#fff;border:1px solid #dce6e8;border-radius:18px;box-shadow:0 16px 60px #152e3530;overflow:hidden}.head{padding:16px 18px;background:#153d43;color:#fff;display:flex;justify-content:space-between;align-items:center}.head b{font-size:15px}.head small{display:block;color:#b4d4d5;margin-top:4px;font-size:11px}.fold{border:0;background:none;color:white;font-size:20px;cursor:pointer}.body{padding:18px}.label{font-size:11px;letter-spacing:1px;color:#5b7178;margin:0 0 8px}.status{font-size:13px;line-height:1.65;padding:11px 12px;background:#eef6f5;border-radius:10px;margin:12px 0;color:#236960}.warning{background:#fff5e6;color:#88550f}select{font:inherit;font-size:13px;width:100%;padding:10px 8px;border:1px solid #cedbdd;background:#fff;border-radius:9px}.name{font-size:16px;font-weight:700;line-height:1.5;margin:14px 0 5px}.address{font-size:12px;line-height:1.6;color:#6d7e84;overflow-wrap:anywhere}button.save{width:100%;padding:11px;margin-top:16px;border:0;border-radius:9px;background:#14766c;color:#fff;font:inherit;font-size:14px;cursor:pointer}button:disabled{opacity:.45;cursor:default}.foot{margin-top:12px;color:#75888b;font-size:11px;line-height:1.7}.mini{padding:8px 15px;color:white;background:#153d43;border:0;border-radius:12px;cursor:pointer}</style><section class="panel"><div class="head"><div><b>AOI · 多地图采集</b><small></small></div><button class="fold" title="收起">−</button></div><div class="body"><p class="label">当前地点</p><select aria-label="选择搜索结果"></select><div class="name">等待地图搜索</div><div class="address">在地图上搜索名称，再点击具体地点。</div><div class="status" role="status">等待页面返回地点信息</div><button class="save" disabled>采集当前边界</button><div class="foot"></div></div></section>`;
+  const logo = web
+    ? window.__AOI_WEB_CONFIG.logo
+    : chrome.runtime.getURL("images/aoi-logo.svg");
+  shadow.innerHTML = `<style>
+    :host{all:initial;font-family:Georgia,"Noto Serif SC","Source Han Serif SC","Songti SC","STSong","SimSun",serif;color:#302e2a}
+    *{box-sizing:border-box}
+    .panel{width:320px;background:#fcfbf8;border:1px solid #e4dfd6;border-radius:16px;box-shadow:0 16px 60px #47352624;overflow:hidden}
+    .head{padding:16px 18px;background:#f3eee5;border-bottom:1px solid #e4dfd6;display:flex;justify-content:space-between;align-items:center;gap:10px}
+    .head img{width:36px;height:36px;flex:none}.heading{flex:1}
+    .head b{font-size:15px;font-weight:600}.head small{display:block;color:#716b63;margin-top:4px;font-size:11px}
+    .fold{border:0;background:none;color:#716b63;font-size:20px;cursor:pointer}
+    .body{padding:18px}.label{font-size:11px;letter-spacing:1px;color:#716b63;margin:0 0 8px}
+    .status{font-size:13px;line-height:1.7;padding:11px 12px;background:#f2ede3;border-radius:8px;margin:12px 0;color:#735840}
+    .warning{background:#fff3df;color:#885b16}
+    select{font:inherit;font-size:13px;width:100%;padding:10px 8px;border:1px solid #ded7cb;background:#fff;border-radius:8px}
+    .name{font-size:18px;font-weight:600;line-height:1.6;margin:14px 0 5px}
+    .address{font-size:12px;line-height:1.7;color:#716b63;overflow-wrap:anywhere}
+    button.save{width:100%;padding:11px;margin-top:16px;border:0;border-radius:8px;background:#a65339;color:#fff;font:inherit;font-size:14px;cursor:pointer}
+    button.save:hover{background:#8e422e}button:disabled{opacity:.45;cursor:default}
+    button:focus-visible,select:focus-visible{outline:2px solid #a65339;outline-offset:3px}
+    .foot{margin-top:12px;color:#716b63;font-size:11px;line-height:1.7}
+  </style><section class="panel"><div class="head"><img alt="AOI" width="36" height="36"><div class="heading"><b>AOI · 多地图采集</b><small></small></div><button class="fold" title="收起">−</button></div><div class="body"><p class="label">当前地点</p><select aria-label="选择搜索结果"></select><div class="name">等待地图搜索</div><div class="address">在地图上搜索名称，再点击具体地点。</div><div class="status" role="status">等待页面返回地点信息</div><button class="save" disabled>采集当前边界</button><div class="foot"></div></div></section>`;
+  shadow.querySelector(".head img").src = logo;
   const $ = (s) => shadow.querySelector(s);
   $(".head small").textContent =
     C.PROVIDERS[provider].name +
