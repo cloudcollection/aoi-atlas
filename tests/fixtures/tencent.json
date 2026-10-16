@@ -1,0 +1,54 @@
+{
+  "search": {
+    "url": "https://mmapgwpc.map.qq.com/mapsearch?qt=poi",
+    "data": {
+      "info": { "error": 0 },
+      "detail": {
+        "city": {
+          "ccode": 1990,
+          "acode": 440300,
+          "cname": "深圳市",
+          "ctype": 2,
+          "level": 11,
+          "pointx": 12696871.69,
+          "pointy": 2576908.5,
+          "geotype": 0,
+          "bus": 2,
+          "path": [
+            { "acode": 440300, "ccode": 1990, "cname": "深圳市", "ctype": 2 },
+            { "acode": 440000, "ccode": 1965, "cname": "广东省", "ctype": 1 },
+            { "acode": 0, "ccode": 1, "cname": "中国", "ctype": 0 }
+          ]
+        },
+        "pois": [
+          {
+            "uid": "13178396489244734153",
+            "name": "深圳人才公园",
+            "addr": "广东省深圳市南山区沙河西路与东滨路交叉口",
+            "classes": "旅游景点:公园",
+            "phone": "",
+            "CO": "221100",
+            "pointx": 113.9486,
+            "pointy": 22.510111
+          }
+        ]
+      }
+    }
+  },
+  "detail": {
+    "url": "https://mmapgwpc.map.qq.com/mapsearch?qt=rich&pid=13178396489244734153",
+    "data": {
+      "info": { "error": 0, "type": 74 },
+      "detail": {
+        "baseInfo": {
+          "address": "沙河西路与东滨路交叉口",
+          "classes": "旅游景点:公园",
+          "lat": "22.510111",
+          "lng": "113.948600",
+          "name": "深圳人才公园",
+          "telephone": " "
+        }
+      }
+    }
+  }
+}

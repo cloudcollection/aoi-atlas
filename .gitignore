@@ -1,0 +1,13 @@
+output/
+aoi.sqlite
+aoi.sqlite-*
+__pycache__/
+*.pyc
+.venv/
+.runtime/
+.pytest_cache/
+node_modules/
+.playwright*/
+*.log
+.env
+releases/
