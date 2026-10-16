@@ -1,6 +1,6 @@
 # 来源与第三方组件
 
-原有高德采集方案参考 [eqeqeqr/aoiCollector](https://github.com/eqeqeqr/aoiCollector)，基线提交 `485731998e04a55d0f3ee2374c6bb0ad350dbf0b`；保留原提交历史、作者信息及仍沿用组件的声明。
+原有高德采集方案参考 [eqeqeqr/aoiCollector](https://github.com/eqeqeqr/aoiCollector)，基线提交 `485731998e04a55d0f3ee2374c6bb0ad350dbf0b`；来源及原作者信息保留在参考链接和组件声明中；当前主分支以独立版本维护，早期版本保留。
 
 **百度地图和腾讯地图适配由本项目新增实现**，不是参考仓库原有能力。本项目还新增共享坐标与几何规范、来源质量提示、扩展/Web 工作台、数据迁移、版本化输出和回归验证，并修复原高德捕获流程。
 
