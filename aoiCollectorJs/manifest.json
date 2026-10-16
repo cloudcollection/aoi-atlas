@@ -1,0 +1,60 @@
+{
+  "manifest_version": 3,
+  "name": "AOI 多地图采集",
+  "version": "2.0.0",
+  "minimum_chrome_version": "111",
+  "description": "高德、百度来源边界采集；腾讯实验地点记录。保留来源与精确性标记，本地保存和导出。",
+  "permissions": ["downloads"],
+  "host_permissions": [
+    "https://gaode.com/*",
+    "https://*.gaode.com/*",
+    "https://amap.com/*",
+    "https://*.amap.com/*",
+    "https://map.baidu.com/*",
+    "https://map.qq.com/*"
+  ],
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://gaode.com/*",
+        "https://*.gaode.com/*",
+        "https://amap.com/*",
+        "https://*.amap.com/*",
+        "https://map.baidu.com/*",
+        "https://map.qq.com/*"
+      ],
+      "js": ["core.js", "hook.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": [
+        "https://gaode.com/*",
+        "https://*.gaode.com/*",
+        "https://amap.com/*",
+        "https://*.amap.com/*",
+        "https://map.baidu.com/*",
+        "https://map.qq.com/*"
+      ],
+      "js": ["core.js", "panel.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+}

@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>AOI · 地图区域工作台</title>
+    <link rel="stylesheet" href="vendor/leaflet/leaflet.css" />
+    <link rel="stylesheet" href="manager.css" />
+  </head>
+  <body>
+    <header>
+      <div class="brand">
+        <span class="mark">a</span>
+        <div>
+          <b>AOI<span> / 地图区域工作台</span></b
+          ><small>收集边界，保留每一份来源。</small>
+        </div>
+      </div>
+      <div class="local"><i></i> 本地保存 <span id="mode"></span></div>
+    </header>
+    <main>
+      <section class="intro">
+        <div>
+          <p class="eyebrow">YOUR SPATIAL COLLECTION</p>
+          <h1>从地点，走向区域。</h1>
+          <p>在地图上选择地点，把来源边界整理成可用的数据。</p>
+        </div>
+        <div class="stats">
+          <div><strong id="aoiCount">0</strong><span>区域边界</span></div>
+          <div><strong id="poiCount">0</strong><span>地点记录</span></div>
+          <div><strong id="sourceCount">0</strong><span>数据来源</span></div>
+        </div>
+      </section>
+      <section class="providers" aria-label="地图来源">
+        <article class="provider gaode">
+          <span class="provider-icon">高</span>
+          <div><b>高德地图</b><small>搜索并点击建筑或园区</small></div>
+          <span class="tag">支持 AOI</span
+          ><button data-provider="gaode">打开地图 ↗</button>
+        </article>
+        <article class="provider baidu">
+          <span class="provider-icon">百</span>
+          <div><b>百度地图</b><small>保留边界精确性标记</small></div>
+          <span class="tag blue">支持 AOI</span
+          ><button data-provider="baidu">打开地图 ↗</button>
+        </article>
+        <article class="provider tencent">
+          <span class="provider-icon">腾</span>
+          <div><b>腾讯地图</b><small>当前仅保存地点信息</small></div>
+          <span class="tag amber">实验支持</span
+          ><button data-provider="tencent">打开地图 ↗</button>
+        </article>
+      </section>
+      <div id="notice" role="status" hidden></div>
+      <section class="workspace">
+        <aside>
+          <div class="list-title">
+            <h2>我的采集</h2>
+            <button id="refresh" title="刷新记录">刷新 ↻</button>
+          </div>
+          <div class="filters">
+            <input
+              id="search"
+              placeholder="搜索名称、地址或地点 ID"
+              aria-label="搜索记录"
+            /><select id="providerFilter" aria-label="筛选地图来源">
+              <option value="">全部来源</option>
+              <option value="gaode">高德</option>
+              <option value="baidu">百度</option>
+              <option value="tencent">腾讯 · 实验</option>
+            </select>
+          </div>
+          <div id="list"></div>
+          <div class="list-foot">
+            <span id="shown">0 条记录</span><span>按采集时间排列</span>
+          </div>
+        </aside>
+        <div class="map-pane">
+          <div class="map-head">
+            <div>
+              <h2>边界预览</h2>
+              <span id="mapCaption">选择记录，查看边界与来源</span>
+            </div>
+            <button id="fit">查看全部</button>
+          </div>
+          <div id="map"></div>
+          <div id="mapStatus" hidden></div>
+          <div id="detail">
+            <div class="detail-empty">
+              选择左侧记录查看详情。导出统一使用 WGS-84 坐标。
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="export-bar">
+        <div>
+          <b>让采集结果，继续发挥作用。</b
+          ><small>GeoJSON 用于地图分析，CSV 用于整理；备份保留原始来源。</small>
+        </div>
+        <div class="exports">
+          <button id="backup">完整备份</button
+          ><label class="button" for="restore">恢复备份</label
+          ><input
+            id="restore"
+            type="file"
+            accept="application/json,.json"
+            hidden
+          /><button id="csv">导出 CSV</button
+          ><button id="geojson" class="primary">导出 GeoJSON ↓</button>
+        </div>
+      </section>
+      <footer>
+        <span>AOI COLLECTOR · 2.0</span
+        ><span>源坐标与质量标记随记录保留 · 无边界时不生成替代面</span>
+      </footer>
+    </main>
+    <script src="core.js"></script>
+    <script src="vendor/leaflet/leaflet.js"></script>
+    <script src="manager.js"></script>
+  </body>
+</html>

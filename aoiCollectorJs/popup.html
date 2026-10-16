@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="manager.css" />
+    <style>
+      body {
+        width: 330px;
+        background: white;
+        padding: 24px;
+      }
+      .popup-title {
+        font-size: 21px;
+        margin: 10px 0 4px;
+      }
+      .popup-copy {
+        color: #6c8185;
+        font-size: 12px;
+      }
+      .popup-badges {
+        display: flex;
+        gap: 6px;
+        margin: 18px 0;
+      }
+      .popup-open {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin: 18px 0 8px;
+      }
+      #count {
+        font-size: 12px;
+        color: #6c8185;
+      }
+    </style>
+    <title>AOI 多地图采集</title>
+  </head>
+  <body>
+    <span class="mark" style="display: block">a</span>
+    <h1 class="popup-title">地图里的区域，收进来。</h1>
+    <p class="popup-copy">高德与百度来源边界采集。腾讯当前仅记录地点信息。</p>
+    <div class="popup-badges">
+      <span class="tag">高德 AOI</span><span class="tag blue">百度 AOI</span
+      ><span class="tag amber">腾讯 · 实验</span>
+    </div>
+    <span id="count">正在读取…</span
+    ><button id="open" class="primary popup-open">打开采集管理 →</button
+    ><small class="popup-copy">卸载扩展会删除数据，请先导出完整备份。</small>
+    <script src="popup.js"></script>
+  </body>
+</html>
