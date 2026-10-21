@@ -153,4 +153,4 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for local checks and contribution steps. 
 
 This project reuses code and resources from [eqeqeqr/aoiCollector](https://github.com/eqeqeqr/aoiCollector) and continues development of the Amap collection functionality. Baidu and Tencent adapters, the shared data model, workbenches, migration, and versioned outputs were added in this project.
 
-The upstream repository did not provide a clear project license when checked, so this project does not relicense the reused code under MIT or another blanket license. See [third-party notices](THIRD_PARTY_NOTICES.md) for component licenses and attribution. Map data and trademarks remain subject to their owners' terms.
+See [third-party notices](THIRD_PARTY_NOTICES.md) for component licenses and attribution. Map data and trademarks remain subject to their owners' terms.
