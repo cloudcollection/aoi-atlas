@@ -57,7 +57,7 @@ Amap follows the same sequence: search → click a specific place → inspect th
    .\start.ps1
    ```
 
-5. The first run installs dependencies and may need to obtain a browser driver. Once the service starts, visit **http://127.0.0.1:9224/**.
+5. The first run installs dependencies and may need to obtain a browser driver. Once the service starts, visit [http://127.0.0.1:9224/](http://127.0.0.1:9224/).
 6. Click a provider's **打开地图 ↗** (Open map). Collect in the separate browser launched by the tool.
 7. Complete any login or verification on the original map page. After saving, return to the workbench and click **刷新 ↻** (Refresh).
 8. Select a record, then click **下载 SHP 套件** (Download SHP package) to save `aoi-files.zip`.

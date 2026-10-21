@@ -90,7 +90,7 @@ Choose this route for local file storage and Shapefile exports. You need **Pytho
    .\start.ps1
    ```
 
-4. Visit **http://127.0.0.1:9224/**. Click **打开地图** (Open map) to launch the separate collection browser.
+4. Visit [http://127.0.0.1:9224/](http://127.0.0.1:9224/). Click **打开地图** (Open map) to launch the separate collection browser.
 5. Search, inspect, and save a place in that browser. Return to the workbench and click **刷新** (Refresh).
 6. Select a record and click **下载 SHP 套件** (Download SHP package), or use the bottom bar for GeoJSON, CSV, and backups.
 
@@ -151,6 +151,6 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for local checks and contribution steps. 
 
 ## Credits and licensing
 
-The original Amap collection approach was informed by [eqeqeqr/aoiCollector](https://github.com/eqeqeqr/aoiCollector). Baidu and Tencent adapters, the shared data model, workbenches, migration, and versioned outputs are maintained in this project.
+This project reuses code and resources from [eqeqeqr/aoiCollector](https://github.com/eqeqeqr/aoiCollector) and continues development of the Amap collection functionality. Baidu and Tencent adapters, the shared data model, workbenches, migration, and versioned outputs were added in this project.
 
-There is currently **no repository-wide license grant**; the referenced upstream did not provide a clear project license when checked. See [third-party notices](THIRD_PARTY_NOTICES.md) for component licenses and attribution. Map data and trademarks remain subject to their owners' terms.
+The upstream repository did not provide a clear project license when checked, so this project does not relicense the reused code under MIT or another blanket license. See [third-party notices](THIRD_PARTY_NOTICES.md) for component licenses and attribution. Map data and trademarks remain subject to their owners' terms.
