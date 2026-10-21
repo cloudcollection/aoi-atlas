@@ -37,7 +37,7 @@ async def lifespan(app):
         browser.quit()
 
 
-app = FastAPI(title="AOI 多地图采集", version="2.1.2", lifespan=lifespan)
+app = FastAPI(title="AOI Atlas · 多地图采集", version="2.1.2", lifespan=lifespan)
 app.mount("/shared", StaticFiles(directory=BASE / "aoiCollectorJs"), name="shared")
 
 
@@ -173,5 +173,5 @@ async def files(record_id: str):
 
 
 if __name__ == "__main__":
-    print(f"AOI 多地图采集：http://{HOST}:{PORT}")
+    print(f"AOI Atlas：http://{HOST}:{PORT}")
     uvicorn.run(app, host=HOST, port=PORT, log_level="info")

@@ -37,18 +37,18 @@ def files():
 def build():
     paths = files()
     OUT.mkdir(exist_ok=True)
-    source = OUT / f"aoiCollector-multimap-{VERSION}-source.zip"
-    extension = OUT / f"aoiCollector-multimap-{VERSION}-extension.zip"
+    source = OUT / f"aoi-atlas-{VERSION}-source.zip"
+    extension = OUT / f"aoi-atlas-{VERSION}-extension.zip"
     with zipfile.ZipFile(source, "w", zipfile.ZIP_DEFLATED) as z:
         for p in paths:
-            z.write(ROOT / p, (Path("aoiCollector-multimap") / p).as_posix())
+            z.write(ROOT / p, (Path("aoi-atlas") / p).as_posix())
     with zipfile.ZipFile(extension, "w", zipfile.ZIP_DEFLATED) as z:
         for p in paths:
             if p.parts[0] == "aoiCollectorJs" or p.name == "THIRD_PARTY_NOTICES.md":
                 z.write(ROOT / p, p.as_posix())
         z.writestr(
             "INSTALL.txt",
-            f"AOI 多地图采集 {VERSION}\n\n解压后打开 edge://extensions/ 或 chrome://extensions/，开启开发者模式，选择加载已解压的扩展，并选中 aoiCollectorJs 文件夹。刷新地图网页，正常搜索地点，再在浮窗确认并保存。通过扩展图标打开管理页预览、导出和备份。\n\n高德、百度：采集网页实际返回的来源边界。腾讯：实验支持，仅地点。登录及安全验证需在原网页手动完成。\n",
+            f"AOI Atlas · 多地图采集 {VERSION}\n\n解压后打开 edge://extensions/ 或 chrome://extensions/，开启开发者模式，选择加载已解压的扩展，并选中 aoiCollectorJs 文件夹。刷新地图网页，正常搜索地点，再在浮窗确认并保存。通过扩展图标打开管理页预览、导出和备份。\n\n高德、百度：采集网页实际返回的来源边界。腾讯：实验支持，仅地点。登录及安全验证需在原网页手动完成。\n",
         )
     archives = [source, extension]
     hashes = []

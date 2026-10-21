@@ -35,7 +35,7 @@
     button.save:hover{background:#8e422e}button:disabled{opacity:.45;cursor:default}
     button:focus-visible,select:focus-visible{outline:2px solid #a65339;outline-offset:3px}
     .foot{margin-top:12px;color:#716b63;font-size:11px;line-height:1.7}
-  </style><section class="panel"><div class="head"><img alt="AOI" width="36" height="36"><div class="heading"><b>AOI · 多地图采集</b><small></small></div><button class="fold" title="收起">−</button></div><div class="body"><p class="label">当前地点</p><select aria-label="选择搜索结果"></select><div class="name">等待地图搜索</div><div class="address">在地图上搜索名称，再点击具体地点。</div><div class="status" role="status">等待页面返回地点信息</div><button class="save" disabled>采集当前边界</button><div class="foot"></div></div></section>`;
+  </style><section class="panel"><div class="head"><img alt="AOI" width="36" height="36"><div class="heading"><b>AOI Atlas · 多地图采集</b><small></small></div><button class="fold" title="收起">−</button></div><div class="body"><p class="label">当前地点</p><select aria-label="选择搜索结果"></select><div class="name">等待地图搜索</div><div class="address">在地图上搜索名称，再点击具体地点。</div><div class="status" role="status">等待页面返回地点信息</div><button class="save" disabled>采集当前边界</button><div class="foot"></div></div></section>`;
   shadow.querySelector(".head img").src = logo;
   const $ = (s) => shadow.querySelector(s);
   $(".head small").textContent =

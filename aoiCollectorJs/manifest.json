@@ -1,9 +1,9 @@
 {
   "manifest_version": 3,
-  "name": "AOI 多地图采集",
+  "name": "AOI Atlas · 多地图采集",
   "version": "2.1.2",
   "minimum_chrome_version": "111",
-  "description": "高德、百度来源边界采集；腾讯实验地点记录。保留来源与精确性标记，本地保存和导出。",
+  "description": "从高德、百度地图收集 AOI 边界，预览并导出 GeoJSON / CSV；腾讯支持地点。保留来源与质量标记，本地保存。",
   "permissions": ["downloads"],
   "host_permissions": [
     "https://gaode.com/*",
